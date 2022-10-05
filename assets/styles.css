@@ -36,6 +36,9 @@ aside {
 
 main {
   grid-area: main;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 /*
 aside > * {
@@ -280,4 +283,66 @@ aside > * {
   background-image: url('./img/yellow-circle.svg');
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.posts__title {
+  background-color: var(--bg-cards);
+  padding: 3rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 2rem;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.posts__card {
+  display: grid;
+  grid-template-areas: 'image content';
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  padding: 3rem 4rem;
+  background-color: var(--bg-cards);
+  border-radius: 2rem;
+  height: 200px;
+}
+
+.posts__card-image {
+  width: 12.8rem;
+  border-radius: 50%;
+  grid-area: image;
+}
+
+.posts__card-content {
+  grid-area: content;
+}
+
+.posts__card-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.posts__card-time {
+  font-size: 1.4rem;
+  display: inline-block;
+  margin-block: 1rem 3rem;
+}
+.posts__card-text {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.posts__card-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.posts__card-item {
+  font-size: 1.4rem;
+  align-items: flex-start;
 }
