@@ -129,10 +129,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .navigation__link {
   stroke: var(--text-color);
+  transition: all 250ms;
 }
 
 .navigation__link::before {
@@ -188,6 +191,7 @@ main {
   padding: 0.7rem;
   width: 28%;
   text-align: center;
+  transition: all 250ms;
 }
 
 .technologies__item .technologies__link {
@@ -195,6 +199,7 @@ main {
   font-size: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
+  transition: all 250ms;
 }
 
 .experiencies,
@@ -252,6 +257,10 @@ main {
   display: flex;
   align-items: center;
   grid-column: span 2;
+}
+
+.projects-card__title a {
+  transition: all 250ms;
 }
 
 .projects-card__title::before {
@@ -323,6 +332,10 @@ main {
   font-size: 1.8rem;
 }
 
+.posts__card-title a {
+  transition: all 250ms;
+}
+
 .posts__card-time {
   font-size: 1.4rem;
   display: inline-block;
@@ -341,4 +354,129 @@ main {
 .posts__card-item {
   font-size: 1.4rem;
   align-items: flex-start;
+}
+
+/**Animations and user interactions **/
+
+.navigation__link:hover,
+.projects__title a:hover {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--bg-techs);
+  transition: all 250ms;
+}
+
+.technologies__item:hover {
+  background-color: var(--text-color);
+  padding-inline: 1rem;
+}
+.technologies__item:hover .technologies__link {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  transition: all 250ms;
+}
+
+.projects-card__title a:hover {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--bg-techs);
+  transition: all 250ms;
+}
+
+.posts__card-title a:hover {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--bg-techs);
+  transition: all 250ms;
+}
+
+aside section {
+  animation: fromBottom 700ms backwards;
+}
+
+.navigation {
+  animation-delay: 0.4s;
+}
+.technologies {
+  animation-delay: 0.6s;
+}
+
+.experiencies {
+  animation-delay: 0.8s;
+}
+
+.education {
+  animation-delay: 1s;
+}
+
+aside .profile {
+  animation: fromTop 700ms 0.27s backwards;
+}
+
+main .projects h2 {
+  animation: fromTop 700ms 0.27s backwards;
+}
+
+main .projects .projects__card {
+  animation: fromBottom 700ms backwards;
+  animation-delay: 0.4s;
+}
+
+main .posts h2 {
+  animation: fromBottom 700ms backwards;
+  animation-delay: 0.6s;
+}
+main .posts .posts__card {
+  animation: fromBottom 700ms backwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/** media queries**/
+
+@media screen and (max-width: 1200px) {
+  .projects {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+  }
+  aside section {
+    max-width: 100%;
+  }
+
+  .navigation__link {
+    display: inline-block;
+    width: 50%;
+  }
 }
