@@ -463,9 +463,26 @@ main .posts .posts__card {
     display: flex;
     flex-direction: column;
   }
+  .navigation__link br {
+    display: none;
+  }
+
+  .posts__card {
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'image'
+      'content';
+  }
+
+  .posts__card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   body {
     font-size: 1.6rem;
     display: flex;
@@ -478,5 +495,30 @@ main .posts .posts__card {
   .navigation__link {
     display: inline-block;
     width: 50%;
+  }
+  .projects-card__text {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .navigation__link br {
+    display: inline-block;
+  }
+
+  .technologies {
+    padding-inline: 1.5rem;
+  }
+
+  .technologies__list {
+    gap: 1rem;
+  }
+
+  .technologies__item {
+    padding: 0.5rem;
+  }
+
+  .technologies__item {
+    width: 30%;
   }
 }
